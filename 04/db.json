@@ -1,0 +1,12 @@
+{
+  "data": [
+    {
+      "name": "Ola",
+      "surname": "Dragańczyk",
+      "dateOfBirth": 100,
+      "login": "OlaLogin",
+      "email": "ola@example.com",
+      "password": "securePass123"
+    }
+  ]
+}

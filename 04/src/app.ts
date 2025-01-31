@@ -1,6 +1,3 @@
-import FormComponent from './components/FormComponent.js';
-
-import { InputField } from './types/InputField.js';
 
 import express from 'express';
 import path from 'path';
@@ -8,23 +5,25 @@ import { fileURLToPath } from 'url';
 
 const app = express();
 
-// Resolve __dirname for ES modules (in case you're using ES modules)
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Serve static files from the public folder
-app.use(express.static(path.join(__dirname, '../public')));
 
-// Serve the index.html file when someone accesses the root route
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'dist')));
+
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public', 'index.html'));
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-// Start the server on a port (e.g., 3050)
-const PORT = 3050;
+
+const PORT = 3010;
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
+
+console.log("Hello, TypeScriptffff!");
 
 // import express from 'express';
 // import path from 'path';

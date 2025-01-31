@@ -7,7 +7,10 @@
     },
     "type": "module",
     "scripts": {
-    "start:json-server": "json-server --watch db.json --port 3010",
-    "run": "node ./dist/app.js"
-}
+        "start:json-server": "json-server --watch db.json --port 3010",
+        "run": "node ./dist/app.js"
+    },
+    "devDependencies": {
+        "@types/node": "^22.12.0"
+    }
 }

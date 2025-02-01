@@ -48,3 +48,15 @@ hashPassword("mojeBezpieczneHaslo").then((hash: string) => {
 npm run json-server
 
 npm run dev
+
+1. dlaczego to nie działa
+
+const url = 
+    'http://localhost:5000/users';
+      function load(url: string) {
+        return fetch(url).then(resp => resp.json());
+      }
+     
+    load().then(data => console.log(data));
+      
+róznica między json-server a jsonplaceholder

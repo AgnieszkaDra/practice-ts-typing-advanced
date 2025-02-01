@@ -13,27 +13,38 @@ export const submitForm = (form: HTMLFormElement, inputs: InputField[]): void =>
         }
       });
 
-      try {
-        const response = await fetch('http://localhost:5000/users', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(formData)
-        });
-  
-        if (response.ok) {
-          console.log('User registered successfully!');
-        } else {
-          console.error('Failed to register user.');
-        }
-      } catch (error) {
-        console.error('Error:', error);
-      }
+type User = { id: string, name: string, day:string, month:string, year:string, email:string, password:string };
+ async function request<T>(
+  url: string,
+  options? : RequestInit
+): Promise<T> {
 
-  
-      validateForm(inputs, formData, form);
-      
-    });
-  };
-  
+   const resp = await fetch(url, options);
+   if(!resp.ok) throw new Error(`Error: ${resp.status}`);
+   return await resp.json();
+ }
+ 
+ (async () => { 
+  const url = 'http://localhost:5000/users';
+  const body = formData;
+   try {
+       const data = await request<User>(
+        url,
+        {
+          method: 'POST',
+          body: JSON.stringify(body)
+        }
+      );
+       console.log(data);
+   } catch(err) {
+       if(err instanceof Error) {
+           console.error(err.message)
+       }
+       console.error(err)
+   };
+ })();
+
+ validateForm(inputs, formData, form);
+
+  });
+}

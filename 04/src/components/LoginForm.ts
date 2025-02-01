@@ -3,10 +3,10 @@ import createFields  from '../utils/createFields';
 import { submitForm } from '../utils/submitForm';
 import createWrapperForForm from './createWrapperForForm';
 
-export const RegisterForm = (inputs: InputField[]): HTMLElement => {
-  const wrapper = createWrapperForForm(inputs, 'register');
+export const LoginForm = (inputs: InputField[]): HTMLElement => {
+  const wrapper = createWrapperForForm(inputs, 'login');
 
-  const filteredInputs: InputField[] = inputs.filter(input => input.category === 'register');
+  const filteredInputs: InputField[] = inputs.filter(input => input.category === 'login');
     filteredInputs.forEach(element => {
     const input = createFields.createFields(element);
     wrapper.appendChild(input);
@@ -19,9 +19,9 @@ export const RegisterForm = (inputs: InputField[]): HTMLElement => {
       
   wrapper.appendChild(submitButton);
 
-  submitForm(wrapper, inputs, 'register');
+  submitForm(wrapper, inputs, 'login');
   return wrapper;
 
 }
 
-export default RegisterForm;
+export default LoginForm;

@@ -33,7 +33,7 @@ const formFields: InputField[] = [
     required: true,
   },
   {
-    category: 'register',
+    category: 'register' ,
     type: "number",
     name:"year",
     min: 1800 ,
@@ -50,7 +50,23 @@ const formFields: InputField[] = [
     placeholder: "Enter your email",
   },
   {
+    category: 'login',
+    type: "email",
+    name: "email",
+    required: true,
+    label: "Email Address",
+    placeholder: "Enter your email",
+  },
+  {
     category: 'register',
+    type: "password",  
+    name: "password", 
+    required: true,
+    label: "Password",  
+    placeholder: "Enter your password",  
+  },
+  {
+    category: 'login',
     type: "password",  
     name: "password", 
     required: true,

@@ -1,5 +1,5 @@
 export type FormFieldBase = {
-  category: string;
+  category: 'register' | 'login';
   label?: string;
   name: string;
   required?: boolean;
@@ -25,13 +25,11 @@ export type SelectField = FormFieldBase & {
 export type EmailField = FormFieldBase & {
   type: 'email';
   placeholder?: string;
-  //options: { label: string; value: string }[];
 };
 
 export type PasswordField = FormFieldBase & {
   type: 'password';
   placeholder?: string;
-  //options: { label: string; value: string }[];
 };
 
 export type ButtonElement = FormFieldBase & {

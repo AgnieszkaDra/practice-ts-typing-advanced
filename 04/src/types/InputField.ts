@@ -1,30 +1,42 @@
-// Base field type
 export type FormFieldBase = {
-    category: 'input';
-    label: string;
-    name: string;
-    required?: boolean;
-    value?: string; // Allow `number` for fields like "Date of Birth"
-  };
+  category: string;
+  label?: string;
+  name: string;
+  required?: boolean;
+};
   
-  // Text field type
-  export type TextField = FormFieldBase & {
-    type: 'text' | 'email' | 'password'; // Add support for `email` and `password` types
-    placeholder?: string;
-  };
+export type TextField = FormFieldBase & {
+  type: 'text';
+  placeholder?: string;
+};
   
-  // Number field type
-  export type NumberField = FormFieldBase & {
-    type: 'number';
-    min?: number;
-    max?: number;
-  };
+export type NumberField = FormFieldBase & {
+  type: 'number';
+  min?: number;
+  max?: number;
+  placeholder?: string;
+};
   
-  // Select field type
-  export type SelectField = FormFieldBase & {
-    type: 'select';
-    options: { label: string; value: string | number }[];
-  };
+export type SelectField = FormFieldBase & {
+  type: 'select';
+  options: { label: string; value: string | number }[];
+};
+
+export type EmailField = FormFieldBase & {
+  type: 'email';
+  placeholder?: string;
+  //options: { label: string; value: string }[];
+};
+
+export type PasswordField = FormFieldBase & {
+  type: 'password';
+  placeholder?: string;
+  //options: { label: string; value: string }[];
+};
+
+export type ButtonElement = FormFieldBase & {
+  type: 'select';
+  options: { label: string; value: string | number }[];
+};
   
-  // Combined input field type
-  export type InputField = TextField | NumberField | SelectField;
+export type InputField = TextField | NumberField | SelectField | EmailField | PasswordField | ButtonElement;

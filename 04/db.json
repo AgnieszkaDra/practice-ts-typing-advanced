@@ -1,12 +1,22 @@
 {
-  "data": [
+  "users": [
     {
-      "name": "Ola",
-      "surname": "Dragańczyk",
-      "dateOfBirth": 100,
-      "login": "OlaLogin",
-      "email": "ola@example.com",
-      "password": "securePass123"
+      "id": "a52b",
+      "name": "Agnieszka Draganczyk",
+      "day": "23",
+      "month": "1",
+      "year": "1988",
+      "email": "agnieszka.127@interia.pl",
+      "password": "ddd"
+    },
+    {
+      "id": "e454",
+      "name": "Agnieszka Draganczyk",
+      "day": "23",
+      "month": "1",
+      "year": "1988",
+      "email": "agnieszka.127@interia.pl",
+      "password": "dfgdhdhfg"
     }
   ]
 }

@@ -1,9 +1,10 @@
-// @ts-check
-export function User(firstName, lastName) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.createdAt = new Date();
+export class User {
+    constructor(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.createdAt = new Date;
+    }
+    print() {
+        console.log(this.firstName, this.lastName);
+    }
 }
-User.prototype.print = function () {
-    console.log(this.firstName, this.lastName);
-};

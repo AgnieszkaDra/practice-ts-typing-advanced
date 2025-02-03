@@ -19,17 +19,16 @@ type Book = {
     propName: keyof Book,
     value: string
   ): Book[] | null {
-    const result = books.filter(book => book[propName] === value);
+    const result = books.filter(book => book[propName].toLowerCase() === value.toLowerCase());
     return result.length > 0 ? result : null;
   }
 
-  function getParameter(name: string): string {
-    return name;
-  }
-  
-  const foundBooks = findBooksBy(lectures, 'title', getParameter('Hobbit'));
-  const foundBooks2 = findBooksBy(foreignLiterature, 'isbn', getParameter('788-83-546-7849-1'));
-  const foundBooks3 = findBooksBy(foreignLiterature, 'author', getParameter('Orwell'));
+  const foundBooks = findBooksBy(lectures, 'title', 'Hobbit');
+  const foundBooks2 = findBooksBy(foreignLiterature, 'isbn', '788-83-546-7849-1');
+  const foundBooks3 = findBooksBy(foreignLiterature, 'author', 'Orwell');
+  const foundBooks4 = findBooksBy(foreignLiterature, 'author', 'Hrabia');
+
   console.log(foundBooks)
   console.log(foundBooks2);
   console.log(foundBooks3);
+  console.log(foundBooks4);

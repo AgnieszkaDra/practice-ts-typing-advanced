@@ -18,12 +18,16 @@ function request(url, options) {
 }
 (() => __awaiter(void 0, void 0, void 0, function* () {
     const url = 'https://pokeapi.co/api/v2/pokemon';
-    const id = 21;
+    const id = 20;
     try {
         const data = yield request(`${url}/${id}`, {
             method: 'GET',
         });
         console.log(`Name: ${data.name}`);
+        console.log(`Weight: ${data.weight}`);
+        data.abilities.forEach((ability) => {
+            console.log(`Ability: ${ability.ability.name}`);
+        });
     }
     catch (err) {
         if (err instanceof Error) {

@@ -1,5 +1,11 @@
-type Pokemon = {
-    name: string;
+type PokemonCharacteristic = {
+  name: string;
+  weight: number;
+  abilities: {
+      ability: {
+          name: string;
+      };
+  }[];
 };
   
   async function request<T>(
@@ -14,13 +20,17 @@ type Pokemon = {
   
   (async () => {
     const url = 'https://pokeapi.co/api/v2/pokemon'; 
-    const id = 21; 
+    const id = 20; 
   
     try {
-      const data = await request<Pokemon>(`${url}/${id}`, {
+      const data = await request<PokemonCharacteristic>(`${url}/${id}`, {
         method: 'GET', 
       });
         console.log(`Name: ${data.name}`);
+        console.log(`Weight: ${data.weight}`);
+        data.abilities.forEach((ability) => {
+          console.log(`Ability: ${ability.ability.name}`);
+        });
     } catch (err) {
       if (err instanceof Error) {
         console.error(err.message);

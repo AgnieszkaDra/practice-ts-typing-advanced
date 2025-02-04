@@ -68,9 +68,8 @@ export const validateForm = async (
     if (!password) {
         errors.push(`${field.label} is required.`);
         showErrorMessage(formElement, field.name, `${field.label} is required.`);
-    } else {
-        const hashedPassword = await hashPassword(password);
-        console.log("Hashed Password:", hashedPassword); 
+    }else {
+        
     }
 }
   }

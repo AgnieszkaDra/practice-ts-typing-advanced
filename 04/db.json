@@ -92,6 +92,24 @@
       "year": "1990",
       "email": "ala.123@gmail.com",
       "password": "ala"
+    },
+    {
+      "id": "3141",
+      "name": "Agnieszka Draganczyk",
+      "day": "3",
+      "month": "1",
+      "year": "1990",
+      "email": "agnieszka.127@interia.pl",
+      "password": "monika"
+    },
+    {
+      "id": "ca37",
+      "name": "Agnieszka Draganczyk",
+      "day": "3",
+      "month": "1",
+      "year": "1990",
+      "email": "agnieszka.127@interia.pl",
+      "password": "2a5de9a3a0c5c8749a90ad51c994991354aef84ed18cf4352333261f2a233742"
     }
   ]
 }

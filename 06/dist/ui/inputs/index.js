@@ -4,4 +4,3 @@ export { default as createSelectField } from './createSelectField';
 export { default as createEmailField } from './createEmailField';
 export { default as createPasswordField } from './createPasswordField';
 export { default as createInputForField } from './createInputForField';
-

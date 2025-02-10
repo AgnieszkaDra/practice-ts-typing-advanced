@@ -1,4 +1,4 @@
-import { InputField, TextField, NumberField, SelectField, EmailField, PasswordField } from '../types/InputField';
+import { InputField, TextField, NumberField, SelectField, EmailField, PasswordField } from '../types/InputField.js';
 import { createTextField, createNumberField, createSelectField, createEmailField, createPasswordField } from '../ui/inputs';
 
 

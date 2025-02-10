@@ -19,7 +19,7 @@ export const RegisterForm = (inputs: InputField[]): HTMLElement => {
       
   wrapper.appendChild(submitButton);
 
-  submitForm(wrapper, inputs, 'register');
+  submitForm(wrapper, filteredInputs, 'register');
   return wrapper;
 
 }

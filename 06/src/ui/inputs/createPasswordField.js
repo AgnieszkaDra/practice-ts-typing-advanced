@@ -1,12 +1,7 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const createWrapperForInput_1 = __importDefault(require("./createWrapperForInput"));
+import createWrapperForInput from "./createWrapperForInput";
 const createPasswordField = (field) => {
     var _a;
-    const wrapper = (0, createWrapperForInput_1.default)(field);
+    const wrapper = createWrapperForInput(field);
     const input = document.createElement("input");
     input.className = "input";
     input.type = "password";
@@ -17,7 +12,7 @@ const createPasswordField = (field) => {
     wrapper.insertBefore(input, wrapper.querySelector(".error-message"));
     return wrapper;
 };
-exports.default = createPasswordField;
+export default createPasswordField;
 // import { NumberField } from '../../types/InputField';
 // const createNumberField = (field: NumberField): HTMLInputElement => {
 //   const input = document.createElement('input');

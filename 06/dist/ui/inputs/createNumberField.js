@@ -1,18 +1,19 @@
 import createWrapperForInput from "./createWrapperForInput";
-const createEmailField = (field) => {
-    var _a;
+const createNumberField = (field) => {
     const wrapper = createWrapperForInput(field);
-    const input = document.createElement("input");
-    input.className = "input";
-    input.type = "email";
+    const input = document.createElement('input');
+    input.className = 'input';
+    input.type = 'number';
+    input.placeholder = field.placeholder ?? '';
+    if (field.min !== undefined)
+        input.min = field.min.toString();
+    if (field.max !== undefined)
+        input.max = field.max.toString();
     input.name = field.name;
-    input.required = (_a = field.required) !== null && _a !== void 0 ? _a : false;
-    if (field.placeholder)
-        input.placeholder = field.placeholder;
-    wrapper.insertBefore(input, wrapper.querySelector(".error-message"));
+    wrapper.insertBefore(input, wrapper.querySelector('.error-message'));
     return wrapper;
 };
-export default createEmailField;
+export default createNumberField;
 // import { NumberField } from '../../types/InputField';
 // const createNumberField = (field: NumberField): HTMLInputElement => {
 //   const input = document.createElement('input');

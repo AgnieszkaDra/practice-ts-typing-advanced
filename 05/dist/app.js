@@ -1,5 +1,5 @@
 // import { User } from './User';
-// import { formatDate } from './helpers.js';
+import { formatDate } from './helpers.js';
 // const user1 = new User('Marek', 'Kowalski');
 // console.log(formatDate(user1.createdAt));
 // const user2 = new User('Adam', 'Kowalski');
@@ -21,7 +21,7 @@ document.getElementById('review-form').addEventListener('submit', function (even
     ratingParagraph.classList.add('rating');
     ratingParagraph.textContent = `Rating: ${rating} / 5`;
     const commentParagraph = document.createElement('p');
-    commentParagraph.textContent = comment;
+    commentParagraph.textContent = comment + formatDate(new Date())
     reviewDiv.appendChild(ratingParagraph);
     reviewDiv.appendChild(commentParagraph);
     // Dodawanie recenzji na stronę

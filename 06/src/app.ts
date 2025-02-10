@@ -1,6 +1,6 @@
-import { RegisterForm } from './components/RegisterForm';
-import { LoginForm } from './components/LoginForm';
-import formFields from './fields/formFields';
+import  RegisterForm  from './components/RegisterForm.js';
+import  LoginForm  from './components/LoginForm.js';
+import formFields from './fields/formFields.js';
 import './style.css';
 
 const formContainer = document.createElement('div');

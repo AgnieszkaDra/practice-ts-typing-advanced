@@ -32,7 +32,8 @@ export const submitForm = (form: HTMLFormElement, inputs: InputField[], type: 'r
       formData.password = await hashPassword(formData.password as string);
     }
 
-    type User = { id: string, name: string, day: string, month: string, year: string, email: string, password: string };
+    type UserRegister = { id: string, name: string, day: string, month: string, year: string, email: string, password: string };
+    type UserLogin = {  email: string,  password: string };
 
     async function request<T>(url: string, options?: RequestInit): Promise<T> {
       const resp = await fetch(url, options);
@@ -40,12 +41,12 @@ export const submitForm = (form: HTMLFormElement, inputs: InputField[], type: 'r
       return await resp.json();
     }
 
-    const url = "http://localhost:5000/users";
+    const url = "http://localhost:5005/users";
 
     if (type === "register") {
       try {
         const body = formData;
-        const data = await request<User>(url, {
+        const data = await request<UserRegister>(url, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -60,7 +61,7 @@ export const submitForm = (form: HTMLFormElement, inputs: InputField[], type: 'r
 
     if (type === "login") {
       try {
-        const users = await request<User[]>(url);
+        const users = await request<UserLogin[]>(url);
         const user = users.find(
           (u) => u.email === formData.email && u.password === formData.password
         );

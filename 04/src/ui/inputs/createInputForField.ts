@@ -1,5 +1,5 @@
 import { InputField, TextField, NumberField, SelectField } from '../../types/InputField';
-import { createTextField, createNumberField, createSelectField } from './index';
+import { createTextField, createNumberField, createSelectField } from './index.js';
 
 const createInputForField = (field: InputField): HTMLElement => {
   switch (field.type) {

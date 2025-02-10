@@ -1,5 +1,5 @@
 import { TextField } from '../../types/InputField';
-import createWrapperForInput from './createWrapperForInput';
+import createWrapperForInput from './createWrapperForInput.js';
 
 const createTextField = (field: TextField): HTMLDivElement => {
   const wrapper = createWrapperForInput(field);

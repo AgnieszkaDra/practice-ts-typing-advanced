@@ -1,4 +1,4 @@
-import { InputField } from "../../types/InputField";
+import { InputField } from "../../types/InputField.js";
 
 const createWrapperForInput = (field: InputField): HTMLDivElement => {
 

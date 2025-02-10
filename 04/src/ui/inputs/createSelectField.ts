@@ -1,5 +1,5 @@
 import { SelectField } from '../../types/InputField';
-import createWrapperForInput from './createWrapperForInput';
+import createWrapperForInput from './createWrapperForInput.js';
 
 const createSelectField = (field: SelectField): HTMLDivElement => {
   const wrapper = createWrapperForInput(field);

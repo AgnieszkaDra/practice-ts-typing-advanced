@@ -1,5 +1,5 @@
 import { EmailField, PasswordField } from "../../types/InputField";
-import createWrapperForInput from "./createWrapperForInput";
+import createWrapperForInput from "./createWrapperForInput.js";
 
 const createPasswordField = (field: PasswordField): HTMLDivElement => {
   const wrapper = createWrapperForInput(field);

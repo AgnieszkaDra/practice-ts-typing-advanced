@@ -1,5 +1,5 @@
 import { NumberField } from "../../types/InputField";
-import createWrapperForInput from "./createWrapperForInput";
+import createWrapperForInput from "./createWrapperForInput.js";
 
 const createNumberField = (field: NumberField): HTMLDivElement => {
   const wrapper = createWrapperForInput(field);

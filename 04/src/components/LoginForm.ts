@@ -1,7 +1,7 @@
 import { InputField } from '../types/InputField';
-import createFields  from '../utils/createFields';
-import { submitForm } from '../utils/submitForm';
-import createWrapperForForm from './createWrapperForForm';
+import createFields  from '../utils/createFields.js';
+import { submitForm } from '../utils/submitForm.js';
+import createWrapperForForm from './createWrapperForForm.js';
 
 export const LoginForm = (inputs: InputField[]): HTMLElement => {
   const wrapper = createWrapperForForm(inputs, 'login');

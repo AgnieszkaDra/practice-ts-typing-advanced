@@ -1,6 +1,6 @@
 import { InputField } from '../types/InputField';
-import showErrorMessage from './showErrorMessage';
-import showSuccessMessage from './showSuccessMessage';
+import showErrorMessage from './showErrorMessage.js';
+import showSuccessMessage from './showSuccessMessage.js';
 
 async function hashPassword(password: string): Promise<string> {
   const encoder = new TextEncoder();
@@ -68,8 +68,9 @@ export const validateForm = async (
     if (!password) {
         errors.push(`${field.label} is required.`);
         showErrorMessage(formElement, field.name, `${field.label} is required.`);
-    }else {
-        
+    } else {
+        const hashedPassword = await hashPassword(password);
+        console.log("Hashed Password:", hashedPassword); 
     }
 }
   }
